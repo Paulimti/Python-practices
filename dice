@@ -1,0 +1,40 @@
+"""imports the library function random"""
+import random
+
+"""Working as a store house for the updated numbers"""
+
+round = 1
+score = 0
+
+"""To keep the game going loop is created.
+    This loop will run until the code breaks by condition"""
+
+while True:
+
+    """This informs the user to take an input in between the numbers 1 to 6 including themselves
+         and also informs about the system to quit the game."""
+
+    print("Please input '10' to end the game or input any numbers from 1-6")
+
+    """This declares how many rounds the game is being played"""
+
+    print("round", round)
+
+    """This takes the input as integer from the user"""
+
+    i = int(input("Enter your number:"))
+
+    """This function randomly chooses a number in between 1 to 6"""
+
+    a = random.randint(1, 6)
+
+    """Conditional statement starts here"""
+
+    if i != 10:  # checks if the input is to quit or not.
+        print("Your roll:", a)  # this outputs the number randomly chosen by the programme itself.
+    if i == a:   # checks that the number provided by the user matches the randomly selected number of the programme.
+        score += 1  # if the numbers matches then the score is increased by 1.
+    print("Your score:", score)  # it prints the updated score everytime.
+    if i == 10: # checks if the input matches the number provided to quit the game.
+        break   # this stops the loop.
+    round += 1  # for each run of the loop round is incremented by 1.
