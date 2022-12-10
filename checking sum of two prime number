@@ -1,0 +1,25 @@
+def isSumOfTwo(N):
+    # code here
+    x = []
+    for i in range(2, N):
+        z = 0
+        for j in range(2, i):
+            if i % j == 0:
+                z = 1
+        if z == 0:
+            x.append(i)
+    if N%2!=0:
+        if (N-2) in x:
+            return "Yes"
+        else:
+            return "No"
+    else:
+        for i in range(len(x)):
+            for j in range(i,len(x)):
+                if x[i]+x[j]==N:
+                    return "Yes"
+        return "No"
+
+    print(x)
+n=int(input())
+print(isSumOfTwo(n))
